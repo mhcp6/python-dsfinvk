@@ -1,7 +1,7 @@
 from .fields import BooleanField, LocalDateTimeField, NumericField, StringField, ISODateTimeField
 from .table import Model
 
-TAXONOMY_VERSION = "2.2"
+TAXONOMY_VERSION = "2.3"
 
 
 class Bonpos(Model):
@@ -335,7 +335,7 @@ class Stamm_Kassen(Model):
     Z_NR = NumericField(places=0, _d="Nr. des Kassenabschlusses")
     KASSE_BRAND = StringField(_d="Marke der Kasse", max_length=50)
     KASSE_MODELL = StringField(_d="Modellbezeichnung", max_length=50)
-    KASSE_SERIENNR = StringField(_d="Seriennummer der Kasse", max_length=70)
+    KASSE_SERIENNR = StringField(_d="Seriennummer der Kasse", max_length=70, regex="^[^_/]$") #must not contain '/' or '_'
     KASSE_SW_BRAND = StringField(_d="Markenbezeichnung der Software", max_length=50)
     KASSE_SW_VERSION = StringField(_d="Version der Software", max_length=50)
     KASSE_BASISWAEH_CODE = StringField(_d="Basiswährung der Kasse", max_length=3, regex="[A-Z]{3}")
