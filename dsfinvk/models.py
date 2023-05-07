@@ -1,7 +1,7 @@
 from .fields import BooleanField, LocalDateTimeField, NumericField, StringField, ISODateTimeField
 from .table import Model
 
-TAXONOMY_VERSION = "2.1"
+TAXONOMY_VERSION = "2.2"
 
 
 class Bonpos(Model):
